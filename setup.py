@@ -24,4 +24,3 @@ setup(
         "install": post_install,
     },
 )
-
