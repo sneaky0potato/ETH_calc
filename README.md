@@ -1,6 +1,6 @@
 # Installation Instructions for `my_module`
 
-`my_module` automates the installation of Miniconda and the creation of a Conda environment tailored to your project. Follow these steps to install and use the module:
+`my_module` automates the installation of Miniconda and the creation of a Conda environment for the purpose of this workshop. Follow these steps to install and use the module:
 
 ---
 
