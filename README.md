@@ -56,7 +56,7 @@ To initialize Conda on all available shells after activation:
 ```bash
 conda init --all
 ```
-Then close and reopen your terminal or run the suggested commands to refresh your environment.
+Then close and reopen your terminal to refresh your environment.
 
 ## Creating the Conda Environment
 
