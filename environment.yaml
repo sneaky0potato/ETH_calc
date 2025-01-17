@@ -1,0 +1,13 @@
+
+```yaml
+name: eh_notebook_env
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - ipywidgets
+  - ipython
+  - scipy
+  - numpy
+  - matplotlib
+  - notebook
