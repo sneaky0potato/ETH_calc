@@ -99,6 +99,7 @@ With the environment set up and activated, you can:
   ```bash
   jupyter notebook <notebook_name>.ipynb
   ```
+  *(Replace <notebook_name> with your actual notebook name)*
 
 
 ---
