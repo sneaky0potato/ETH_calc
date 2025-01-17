@@ -1,89 +1,105 @@
-# Installation Instructions for `my_module`
+Electronic Structure Workshop
 
-`my_module` automates the installation of Miniconda and the creation of a Conda environment for the purpose of this workshop. Follow these steps to install and use the module:
-
----
+This workshop requires a Conda environment with specific dependencies for Jupyter notebooks and scientific computing.
 
 ## Prerequisites
-- Ensure you have `Python >= 3.6` and `pip` installed on your system.
-- Ensure your system has internet access for downloading Miniconda and dependencies.
 
----
+- Supported operating systems: Windows, macOS (Intel or Apple Silicon), or Linux.
+- Internet access for downloading Miniconda.
+- Python installed (to run the installer script).
+- Appropriate permissions to install software on your machine.
 
-## Installation Steps
+## Overview
 
-### 1. Build the Module
-If you have downloaded the source code, navigate to the project directory and build the module:
-Command:
+The setup process will:
+
+1. Check if Conda (Miniconda or Anaconda) is already installed.
+2. If not installed, prompt you to download and install Miniconda automatically.
+3. Once Conda is installed, guide you to create a Conda environment with required dependencies.
+
+## Installing Conda (Miniconda)
+
+If you do not already have Conda installed:
+
+1. Run the `miniconda_installer.py` script:
+   ```bash
+   python miniconda_installer.py
+   ```
+   
+   - The script checks for an existing Conda installation.
+   - If Conda is not found, it will ask if you want to install Miniconda.
+   - Upon your confirmation, it detects your OS and architecture, downloads the appropriate installer, and installs Miniconda silently.
+
+## Sourcing Conda
+
+After installing Miniconda, activate Conda in your current session:
+
+**macOS/Linux:**
+```bash
+source ~/miniconda3/bin/activate
 ```
-python setup.py sdist bdist_wheel
+
+**Windows (Command Prompt):**
+```cmd
+C:\> "C:\Users\<YourUsername>\miniconda3\Scripts\activate.bat"
+```
+*(Replace `<YourUsername>` with your actual username. Adjust the path if Miniconda was installed elsewhere.)*
+
+**Windows (PowerShell):**
+```powershell
+& "C:\Users\<YourUsername>\miniconda3\Scripts\Activate.ps1"
 ```
 
-This will create a distributable package in the `dist/` directory.
+> **Note:** Adjust paths if your Miniconda installation directory is different.
 
-### 2. Install the Module
-Use `pip` to install the module:
-Command:
+To initialize Conda on all available shells after activation:
+```bash
+conda init --all
 ```
-pip install dist/my_module-0.1.0.tar.gz
+Then close and reopen your terminal or run the suggested commands to refresh your environment.
+
+## Creating the Conda Environment
+
+After Conda is set up, create the environment with required dependencies.
+
+### Using the YAML File
+
+1. Ensure the `environment.yml` file is in your project directory.
+2. Run:
+   ```bash
+   conda env create -f environment.yml
+   ```
+   
+   This creates an environment named `eh_notebook_env` with:
+   - python=3.9
+   - ipywidgets
+   - ipython
+   - scipy
+   - numpy
+   - matplotlib
+   - notebook
+
+### Manual Creation
+
+Alternatively, create the environment manually:
+```bash
+conda create -n eh_notebook_env -y python=3.9 ipywidgets ipython scipy numpy matplotlib notebook
 ```
 
----
+Then activate it:
+```bash
+conda activate eh_notebook_env
+```
 
-## What Happens During Installation?
-1. Miniconda Installation:
-   - The script detects your operating system and architecture.
-   - It downloads and installs the appropriate Miniconda version.
+## Next Steps
 
-2. Environment Creation:
-   - A Conda environment named `eh_notebook_env` is created.
-   - The following dependencies are installed in the environment:
-     - `python=3.9`
-     - `ipywidgets`
-     - `ipython`
-     - `scipy`
-     - `numpy`
-     - `matplotlib`
-     - `notebook`
+With the environment set up and activated, you can:
 
----
-
-## Verifying the Installation
-
-### Sourcing the Environment
-
-#### Linux/macOS:
-- To activate the environment:
+- Launch Jupyter Notebook:
   ```bash
-  source ~/miniconda3/bin/activate eh_notebook_env
-  ```
-- To deactivate:
-  ```bash
-  conda deactivate
+  jupyter notebook <notebook_name>.ipynb
   ```
 
-#### Windows:
-- To activate the environment using Command Prompt:
-  ```cmd
-  %USERPROFILE%\miniconda3\Scripts\activate eh_notebook_env
-  ```
-- To deactivate:
-  ```cmd
-  conda deactivate
-  ```
-
-- If using PowerShell:
-  ```powershell
-  . %USERPROFILE%\miniconda3\Scripts\activate eh_notebook_env
-  ```
-
-### Check Installed Packages
-- After activating the environment, list installed packages:
-  ```bash
-  conda list
-  ```
-
-- Run your project notebook or scripts to confirm everything works.
 
 ---
 
