@@ -1,6 +1,6 @@
 Electronic Structure Workshop
 
-This workshop requires a Conda environment with specific dependencies for Jupyter notebooks and scientific computing.
+This workshop requires a Conda environment with specific dependencies for Jupyter notebooks and scientific computing. The EH_notebook is from http://mcgrady.chem.ox.ac.uk/python_scripts.html adn some tweaks were done on the same
 
 ## Prerequisites
 
