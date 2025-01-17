@@ -1,6 +1,5 @@
 
 ```yaml
-name: eh_notebook_env
 channels:
   - defaults
 dependencies:
